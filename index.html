@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroConecta | Modelo de Negocio e Inclusión Agrícola</title>
+    <style>
+        /* ==========================================================================
+           METODOLOGÍA POUR: ACCESIBILIDAD Y ESTILOS
+           ========================================================================== */
+        
+        /* 1. PERCEPTIBLE: Alto contraste (mínimo 4.5:1), tipografía clara y escalable */
+        :root {
+            --primary-color: #1b4332;       /* Verde oscuro de alto contraste sobre fondo blanco */
+            --accent-color: #2d6a4f;        /* Verde medio para botones y resaltados */
+            --focus-color: #ff9900;         /* Naranja de alto contraste para foco de teclado */
+            --bg-light: #f8f9fa;            /* Fondo suave que evita fatiga visual */
+            --text-dark: #111111;           /* Texto oscuro contrastante */
+            --text-light: #ffffff;          /* Texto claro sobre fondos oscuros */
+            --border-color: #cccccc;        /* Bordes visibles */
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif; /* Tipografía sans-serif de fácil lectura */
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Enlace invisible de salto rápido para usuarios de teclado o lectores de pantalla */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--focus-color);
+            color: #000;
+            padding: 8px 16px;
+            z-index: 100;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* 2. OPERABLE: Indicadores de foco claros y áreas de clic amplias (mín. 44px) */
+        a:focus, button:focus, input:focus, select:focus {
+            outline: 4px solid var(--focus-color) !important;
+            outline-offset: 2px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 1rem 2rem;
+        }
+
+        header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2rem;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: underline;
+            font-size: 1.1rem;
+            padding: 8px 12px;
+            display: inline-block;
+        }
+
+        nav a:hover, nav a:focus {
+            background-color: var(--accent-color);
+            color: var(--text-light);
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background: #ffffff;
+            padding: 24px;
+            margin-bottom: 24px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 8px;
+            margin-top: 0;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 14px 24px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            min-height: 48px; /* Tamaño accesible para interacción táctil */
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-color);
+        }
+
+        /* 3. COMPRENSIBLE: Tarjetas y estructura clara */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card {
+            border: 2px solid var(--primary-color);
+            padding: 16px;
+            border-radius: 6px;
+            background-color: #ffffff;
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid var(--border-color);
+            border-radius: 6px;
+        }
+
+        .caption {
+            font-size: 0.95rem;
+            color: #444444;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        /* 4. ROBUSTO: Diseño responsivo */
+        @media (max-width: 600px) {
+            nav ul {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Enlace directo para tecnología de asistencia -->
+    <a href="#contenido-principal" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- Encabezado y Navegación Principal -->
+    <header role="banner">
+        <h1>AgroConecta</h1>
+        <p>Modelo de Negocio Inclusivo y Cadena de Valor Agroecológica</p>
+        <nav role="navigation" aria-label="Menú principal">
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#modelo">Modelo de Negocio</a></li>
+                <li><a href="#interaccion">Canales de Acceso</a></li>
+                <li><a href="#metodologia-pour">Metodología POUR</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main id="contenido-principal" role="main">
+
+        <!-- Sección de Inicio -->
+        <section id="inicio" aria-labelledby="titulo-inicio">
+            <h2 id="titulo-inicio">Página de Inicio (Homepage)</h2>
+            <p>AgroConecta es una empresa social dedicada a conectar a pequeños agricultores rurales en situación de vulnerabilidad directamente con compradores comerciales e industriales, eliminando intermediarios y dignificando el trabajo agrícola.</p>
+            
+            <div class="image-container">
+                <img src="https://africaagriculturalnetwork.com/wp-content/uploads/2026/06/organic-farming.webp" 
+                     alt="Pequeño agricultor en su parcela cosechando vegetales orgánicos y preparando composta para el suelo." 
+                     width="800" height="400">
+                <p class="caption">Imagen 1: Integración de pequeños productores a cadenas de valor de alto impacto.</p>
+            </div>
+
+            <p><strong>Promesa de Valor Principal:</strong> Incremento directo del +45% en ingresos para agricultores, contratos de compra anticipada e insumos agroecológicos sostenibles.</p>
+            <a href="#modelo" class="btn-primary" role="button">Conocer más del Modelo</a>
+        </section>
+
+        <!-- Sección del Modelo de Negocio -->
+        <section id="modelo" aria-labelledby="titulo-modelo">
+            <h2 id="titulo-modelo">Modelo de Negocio e Impacto</h2>
+            <div class="grid-cards">
+                <article class="card">
+                    <h3>Problema que Atiende</h3>
+                    <ul>
+                        <li><strong>Coyotaje:</strong> Pérdida de hasta el 70% del valor por intermediarios.</li>
+                        <li><strong>Exclusión Financiera:</strong> Más del 80% carece de crédito formal.</li>
+                        <li><strong>Desperdicio:</strong> Mermas del 35% por falta de transporte frío.</li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <h3>Solución e Ingresos</h3>
+                    <ul>
+                        <li><strong>Comisión B2B (10-12%):</strong> Cobrada al comprador final. Cero costo al productor.</li>
+                        <li><strong>Pago Inmediato:</strong> Transferencia directa al entregar en el nodo.</li>
+                        <li><strong>Micro-anticipos:</strong> Insumos orgánicos sin intereses abusivos.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <!-- Sección Canales de Interacción -->
+        <section id="interaccion" aria-labelledby="titulo-interaccion">
+            <h2 id="titulo-interaccion">Opciones de Interacción Accesibles</h2>
+            <div class="grid-cards">
+                <div class="card">
+                    <h3>1. Nodos Comunitarios</h3>
+                    <p>Puntos físicos de acopio situados a menos de 5 km de las parcelas para facilitar la entrega sin depender de transporte propio.</p>
+                </div>
+                <div class="card">
+                    <h3>2. Plataforma SMS / App</h3>
+                    <p>Canal por mensajería de texto accesible desde teléfonos básicos sin necesidad de smartphones avanzados o internet de alta velocidad.</p>
+                </div>
+                <div class="card">
+                    <h3>3. Promotores Locales</h3>
+                    <p>Ingenieros que realizan visitas directas a parcela ofreciendo asesoría técnica, diagnósticos de suelo y asistencia presencial.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Metodología POUR -->
+        <section id="metodologia-pour" aria-labelledby="titulo-pour">
+            <h2 id="titulo-pour">Cumplimiento de la Metodología POUR</h2>
+            <p>Este sitio web fue desarrollado aplicando los cuatro principios de accesibilidad WCAG / POUR:</p>
+
+            <dl>
+                <dt><strong>1. Perceptible (P):</strong></dt>
+                <dd>Todas las imágenes cuentan con texto alternativo (atributo <code>alt</code>). Se utiliza un contraste de color superior a 4.5:1 para facilitar la lectura a personas con baja visión o daltonismo.</dd>
+
+                <dt><strong>2. Operable (O):</strong></dt>
+                <dd>El sitio se puede navegar completamente usando la tecla <code>Tab</code>. Todos los enlaces y botones cuentan con un recuadro de enfoque (focus) visible de color naranja.</dd>
+
+                <dt><strong>3. Comprensible (U):</strong></dt>
+                <dd>Uso de lenguaje claro, sin tecnicismos innecesarios. La estructura del menú y los encabezados jerárquicos (H1, H2, H3) son idénticos en todas las secciones.</dd>
+
+                <dt><strong>4. Robusto (R):</strong></dt>
+                <dd>El código HTML5 está estructurado de forma semántica, permitiendo que sea interpretado correctamente por lectores de pantalla (como NVDA o TalkBack) y teléfonos móviles de gama baja.</dd>
+            </dl>
+        </section>
+
+    </main>
+
+    <!-- Pie de Página -->
+    <footer role="contentinfo" style="background-color: var(--primary-color); color: var(--text-light); text-align: center; padding: 20px; margin-top: 40px;">
+        <p>&copy; 2026 AgroConecta - Todos los derechos reservados | Proyecto de Accesibilidad Web POUR</p>
+    </footer>
+
+</body>
+</html>
